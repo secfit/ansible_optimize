@@ -48,16 +48,16 @@ To get Ansible for CentOS 7, first ensure that the CentOS 7 EPEL repository is i
    **Example** : We have 8 hosts (server_1, server_2, server_3, server_4, server_5, server_6, server_7, server_8) in inventory & 2 tasks in playbook (assuming default forks = 5)<br/>
    
  #### forks = 5
-	First task process on 5 hosts (server_1, server_2, server_3, server_4, server_5) simultaneously, after that 5 nodes completed task process of rest of hosts (server_6, server_7, server_8). Then Second task process on 5 hosts (server_1, server_2, server_3, server_4, server_5) simultaneously, after that 5 hosts completed task process of rest of hosts (server_6, server_7, server_8). This is how the cycle continues in 5 batches of hosts until the tasks are completed, let's assume processing time for each task is 10 seconds;<br/>
-    Time taken for 1st task = 10s (server_1, server_2, server_3, server_4, server_5) + 10s (server_6, server_7, server_8)<br/>
-    Time taken for 2nd task = 10s (server_1, server_2, server_3, server_4, server_5) + 10s (server_6, server_7, server_8)<br/>
-    Total time taken for playbook = 40s<br/>
+	First task process on 5 hosts (server_1, server_2, server_3, server_4, server_5) simultaneously, after that 5 nodes completed task process of rest of hosts (server_6, server_7, server_8). Then Second task process on 5 hosts (server_1, server_2, server_3, server_4, server_5) simultaneously, after that 5 hosts completed task process of rest of hosts (server_6, server_7, server_8). This is how the cycle continues in 5 batches of hosts until the tasks are completed, let's assume processing time for each task is 10 seconds;
+    Time taken for 1st task = 10s (server_1, server_2, server_3, server_4, server_5) + 10s (server_6, server_7, server_8)
+    Time taken for 2nd task = 10s (server_1, server_2, server_3, server_4, server_5) + 10s (server_6, server_7, server_8)
+    Total time taken for playbook = 40s
 	
 #### forks = 10
-	First task process on 8 hosts (server_1, server_2, server_3, server_4, server_5, server_6, server_7, server_8) simultaneously, let's assume processing time for each task is 10 seconds;<br/>
-	Time taken for 1st task = 10s (server_1, server_2, server_3, server_4, server_5, server_6, server_7, server_8)<br/>
-	Time taken for 2st task = 10s (server_1, server_2, server_3, server_4, server_5, server_6, server_7, server_8)<br/>
-	Total time taken for playbook = 20s<br/>
+	First task process on 8 hosts (server_1, server_2, server_3, server_4, server_5, server_6, server_7, server_8) simultaneously, let's assume processing time for each task is 10 seconds;
+	Time taken for 1st task = 10s (server_1, server_2, server_3, server_4, server_5, server_6, server_7, server_8)
+	Time taken for 2st task = 10s (server_1, server_2, server_3, server_4, server_5, server_6, server_7, server_8)
+	Total time taken for playbook = 20s
 	
 	NB : You should care because this may affect the performance of the Ansible controller if the tasks are executed against a large number of hosts.
   
