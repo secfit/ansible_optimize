@@ -1,11 +1,11 @@
-<br />
-<div align="center">
-  <h3 align="center">Ansible reporting with ARA: Ansible Run Analysis</h3>
-  <p align="center">
-    Detailed analysis of the Ansible playbook runs
-</div>
 
-# ansible_optimize
+<div align="center">
+  <h1 align="center">ansible_optimize</h1>
+</div>
+<br />
+
+
+
 ### Installing Ansible
 To begin exploring Ansible as a means of managing our various servers, we need to install the Ansible software on at least one machine.
 To get Ansible for CentOS 7, first ensure that the CentOS 7 EPEL repository is installed:
